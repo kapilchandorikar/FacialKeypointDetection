@@ -33,3 +33,22 @@ class Net(nn.Module):
         self.drop2 = nn.Dropout(0.2)
         self.drop3 = nn.Dropout(0.3)
         self.drop4 = nn.Dropout(0.4)
+
+    def forward(self, x):
+        ## TODO: Define the feedforward behavior of this model
+
+        # Conv2d-ReLU-MaxPool2d-Dropout blocks
+        # 224 -> 110 -> 53 -> 25
+        x = self.drop1(self.pool(F.relu(self.conv1(x))))
+        x = self.drop2(self.pool(F.relu(self.conv2(x))))
+        x = self.drop3(self.pool(F.relu(self.conv3(x))))
+        
+        # Flattening
+        x = x.view(x.shape[0], -1)
+        
+        # fully connected layers
+        x = self.drop4(F.relu(self.fc1(x)))
+        x = self.fc2(x)
+
+        # a modified x, having gone through all the layers of your model, will be returned
+        return x
