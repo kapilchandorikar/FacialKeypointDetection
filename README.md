@@ -8,6 +8,6 @@ Facial keypoints include points around the eyes, nose, and mouth on a face and a
 ## Project notebooks
 The project will be broken up into a few main parts:
 
-Notebook 1 : Loading and Visualizing the Facial Keypoint Data
-Notebook 2 : Defining and Training a Convolutional Neural Network (CNN) to Predict Facial Keypoints
-model.py
++ Notebook 1 : Loading and Visualizing the Facial Keypoint Data   
++ Notebook 2 : Defining and Training a Convolutional Neural Network (CNN) to Predict Facial Keypoints   
++ model.py   
